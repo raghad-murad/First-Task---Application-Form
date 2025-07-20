@@ -1,0 +1,120 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    display: grid;
+    column-gap: 10px;
+    grid-template-rows: 88px 80px 146px 80px 262px 80px 134px 80px 134px 80px 134px 80px 80px;
+    grid-template-columns: 0.4fr 1fr 0.4fr 1fr;
+}
+
+/* Navigation bar container */
+.nav-bar {
+    grid-row: 1 / 2;
+    background-color: rgba(149, 149, 149, 0.06);
+    width: 100%;
+    height: 88px;
+    padding: 10px;
+    display: flex; 
+    justify-content: flex-start;
+    align-items:center;
+    position: fixed;
+    z-index: 1000;
+}
+
+/* Logo section */
+.logo {
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.logo h1 {
+    font-size: 32px;
+    font-family: Verdana, sans-serif;
+    color: rgb(149, 149, 149);
+}
+
+/* Nav bar elements */
+nav {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.nav-bar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 613px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar nav ul li a {
+    color: rgb(50, 60, 62);
+    font-family: Times, serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    float: left;
+    text-decoration: none;
+}
+
+/* Active link style */
+.nav-bar nav ul li a.active {
+    border-bottom: 2px solid rgba(0, 143, 23, 1);
+}
+
+/* Hover effect for links */
+.nav-bar nav ul li a:hover {
+    color: rgba(0, 143, 23, 1);
+}
+
+/* Main Section */
+.main-section {
+    grid-row: 3 / 4;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.main-section h1 {
+    width: 547px;
+    font-size: 44px;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+    color: rgba(56, 60, 62, 1);
+}
+
+.main-section p {
+    width: 547px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.3px;
+    color: rgba(115, 123, 125, 1);
+}
+
+/* Form Section */
+.form-section {
+    grid-row: 5 / 8;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
