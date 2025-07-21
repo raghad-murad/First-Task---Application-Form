@@ -13,15 +13,15 @@ body {
 
 .container {
     display: grid;
-    column-gap: 10px;
+    column-gap: 230px;
     grid-template-rows: 88px 80px 146px 80px 262px 80px 134px 80px 134px 80px 134px 80px 80px;
-    grid-template-columns: 0.4fr 1fr 0.4fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Navigation bar container */
 .nav-bar {
     grid-row: 1 / 2;
-    background-color: rgba(149, 149, 149, 0.06);
+    background-color: #f9f9f9;
     width: 100%;
     height: 88px;
     padding: 10px;
@@ -63,11 +63,12 @@ nav {
     color: rgb(50, 60, 62);
     font-family: Times, serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.5px;
     float: left;
     text-decoration: none;
+    padding: 10px, 0px;
 }
 
 /* Active link style */
@@ -83,7 +84,7 @@ nav {
 /* Main Section */
 .main-section {
     grid-row: 3 / 4;
-    grid-column: 2;
+    grid-column: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -94,7 +95,6 @@ nav {
     width: 547px;
     font-size: 44px;
     font-weight: 700;
-    font-style: bold;
     line-height: 160%;
     letter-spacing: 0.2px;
     color: rgba(56, 60, 62, 1);
@@ -112,9 +112,361 @@ nav {
 /* Form Section */
 .form-section {
     grid-row: 5 / 8;
-    grid-column: 2;
+    grid-column: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+/* First Section in The Form - Inputs Sections */
+.form-section-inputs {
+    width: 548px;
+    height: 762px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+} 
+
+.form-group {
+    width: 548px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-group .row {
+    width: 548px;
+    height: 762px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form-group .address-div, .postcode-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-group input {
+    width: 548px;
+    height: 38px;
+    border: none;
+    border-bottom: 2px solid rgba(115, 123, 125, 1);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+    outline: none;
+}
+
+.error-message {
+    width: 357px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.3px;
+    text-align: start;
+    padding-top: 12px;
+    color: rgba(212, 13, 13, 1);
+}
+
+/* Second Section of The Form - Upload File Section */
+.form-section-upload-files {
+    width: 548px;
+    height: 132px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form-section-upload-files .upload {
+    width: 548px;
+    height: 104px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px dashed rgba(142, 142, 142, 1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.form-section-upload-files .upload-label {
+    width: 200px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 20;
+}
+
+.form-section-upload-files .upload-label img {
+    height: 22px;
+}
+
+.form-section-upload-files .upload-label p {
+    height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+}
+
+.form-section-upload-files p {
+    height: 26px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+}
+
+/* Third Section of The Form - Submit Sections */
+.form-submit button {
+    width: 548px;
+    height: 54px;
+    margin-top: 28px;
+    margin-bottom: 16px;
+    border: none;
+    background-color: rgba(0, 143, 23, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.form-submit button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 143, 23, 1);
+  border: 2px solid rgba(0, 143, 23, 1);
+}
+
+/* Fourth Section of The Form - Check Section */
+.form-check {
+    width: 365px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px 12px 4px;
+}
+
+.form-check label {
+    width: 313px;
+    height: 22px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+/* Offices Section */
+.offices-section {
+    grid-row: 5;
+    grid-column: 2;
+    width: 357px;
+    height: 262px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.offices-section h2 {
+    width: 357px;
+    height: 26px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+.offices-info {
+    width: 357px;
+    height: 204px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.office-card {
+    width: 357px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.office-card h3 {
+    width: 357px;
+    height: 52px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+.office-card p {
+    width: 357px;
+    height: 52px;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+/* For Quick Inquiries Section */
+.quick-inquiries-section {
+    grid-row: 7;
+    grid-column: 2;
+    width: 357px;
+    height: 134px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.quick-inquiries-section h2 {
+    width: 357px;
+    height: 26px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+.quick-inquiries-info {
+    width: 262px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.quick-inquiries-card {
+    width: 262px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.quick-inquiries-card img {
+    width: 23px;
+    height: 16px;
+    margin: 5px 0px;
+}
+
+.quick-inquiries-card p {
+    width: 231px;
+    height: 26px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+/* Subscrine for Email Section */
+.subscrine-for-email-section {
+    grid-row: 9;
+    grid-column: 2;
+    width: 357px;
+    height: 134px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.subscrine-for-email-section h2 {
+    width: 357px;
+    height: 26px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(56, 60, 62, 1);
+}
+
+.quick-inquiries-card {
+    width: 357px;
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.email-group {
+    width: 262px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.email-group input {
+    width: 262px;
+    height: 38px;
+    border: none;
+    border-bottom: 2px solid rgba(115, 123, 125, 1);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+    outline: none;
+    margin-top: 12px;
+}
+
+.quick-inquiries-card button {
+    width: 71px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 143, 23, 1);
+    vertical-align: center;
+}
+
+.quick-inquiries-card button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 143, 23, 1);
+  border: 2px solid rgba(0, 143, 23, 1);
 }
