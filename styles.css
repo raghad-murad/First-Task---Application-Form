@@ -12,9 +12,13 @@ body {
 }
 
 .container {
+    margin-left: 170px; 
+    margin-right: 145px;
+    width: calc(calc(100% - 170px)-140px);
     display: grid;
+    row-gap: 80px;
     column-gap: 230px;
-    grid-template-rows: 88px 80px 146px 80px 262px 80px 134px 80px 134px 80px 134px 80px 80px;
+    grid-template-rows: 88px 146px 262px 134px 134px 134px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -26,6 +30,8 @@ body {
     height: 88px;
     padding: 10px;
     display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items:center;
     position: fixed;
@@ -56,6 +62,8 @@ nav {
     padding: 0;
     width: 613px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -66,7 +74,6 @@ nav {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.5px;
-    float: left;
     text-decoration: none;
     padding: 10px, 0px;
 }
@@ -81,9 +88,101 @@ nav {
     color: rgba(0, 143, 23, 1);
 }
 
+/* Side Drawer */
+/* Show overlay when drawer is open */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1040;
+  display: none;
+}
+
+.drawer-overlay.show {
+  display: block;
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1050;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: left 0.3s ease;
+}
+
+.side-drawer h1 {
+    margin: 60px 0px;
+    font-size: 32px;
+    font-family: Verdana, sans-serif;
+    color: rgb(149, 149, 149);
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #444;
+}
+
+/* Drawer links */
+.side-drawer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-drawer ul li {
+  margin-bottom: 20px;
+}
+
+.side-drawer ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Active link style */
+.side-drawer ul li a.active {
+    border-bottom: 2px solid rgba(0, 143, 23, 1);
+}
+
+/* Menue Icon */
+.menu {
+  display: none;
+  cursor: pointer;
+  z-index: 1100;
+  margin-left: 20px;
+}
+
+.menu img,
+.menu svg {
+  width: 30px;
+  height: 30px;
+}
+
 /* Main Section */
 .main-section {
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     grid-column: 1;
     display: flex;
     flex-direction: column;
@@ -111,7 +210,7 @@ nav {
 
 /* Form Section */
 .form-section {
-    grid-row: 5 / 8;
+    grid-row: 3 / 6;
     grid-column: 1;
     display: flex;
     flex-direction: column;
@@ -148,7 +247,18 @@ nav {
     align-items: flex-start;
 }
 
-.form-group .address-div, .postcode-div {
+.form-group .address-div {
+    width: 357px;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-group .postcode-div {
+    width: 167px;
+    height: 38px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -157,6 +267,34 @@ nav {
 
 .form-group input {
     width: 548px;
+    height: 38px;
+    border: none;
+    border-bottom: 2px solid rgba(115, 123, 125, 1);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+    outline: none;
+}
+
+.form-group .address-div input{
+    width: 357px;
+    height: 38px;
+    border: none;
+    border-bottom: 2px solid rgba(115, 123, 125, 1);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    color: rgba(142, 142, 142, 1);
+    outline: none;
+}
+
+.form-group .postcode-div input{
+    width: 167px;
     height: 38px;
     border: none;
     border-bottom: 2px solid rgba(115, 123, 125, 1);
@@ -283,7 +421,7 @@ nav {
 
 /* Offices Section */
 .offices-section {
-    grid-row: 5;
+    grid-row: 3 / 4;
     grid-column: 2;
     width: 357px;
     height: 262px;
@@ -346,7 +484,7 @@ nav {
 
 /* For Quick Inquiries Section */
 .quick-inquiries-section {
-    grid-row: 7;
+    grid-row: 4 / 5;
     grid-column: 2;
     width: 357px;
     height: 134px;
@@ -357,7 +495,7 @@ nav {
 }
 
 .quick-inquiries-section h2 {
-    width: 357px;
+    width: 230px;
     height: 26px;
     text-align: start;
     font-size: 16px;
@@ -368,7 +506,7 @@ nav {
 }
 
 .quick-inquiries-info {
-    width: 262px;
+    width: 200px;
     height: 76px;
     display: flex;
     flex-direction: column;
@@ -377,8 +515,8 @@ nav {
 }
 
 .quick-inquiries-card {
-    width: 262px;
-    height: 26px;
+    width: 150px;
+    height: 76px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -386,13 +524,13 @@ nav {
 }
 
 .quick-inquiries-card img {
-    width: 23px;
-    height: 16px;
+    width: 25px;
+    height: 20px;
     margin: 5px 0px;
 }
 
 .quick-inquiries-card p {
-    width: 231px;
+    width: 150px;
     height: 26px;
     font-size: 16px;
     font-weight: 400;
@@ -403,7 +541,7 @@ nav {
 
 /* Subscrine for Email Section */
 .subscrine-for-email-section {
-    grid-row: 9;
+    grid-row: 5 / 6;
     grid-column: 2;
     width: 357px;
     height: 134px;
@@ -411,6 +549,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .subscrine-for-email-section h2 {
@@ -469,4 +608,270 @@ nav {
   background-color: rgba(255, 255, 255, 1);
   color: rgba(0, 143, 23, 1);
   border: 2px solid rgba(0, 143, 23, 1);
+}
+
+.quick-inquiries-card button:hover img{
+  content: url("image/check-mark-svgrepo-hover-com.svg");
+}
+
+/*  Responsive Page Section */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) --> deafult */
+
+/* large devices (laptops, 1200px and down)*/
+@media only screen and (max-width: 1200px) {
+
+    .container {
+        margin-left: 40px; 
+        margin-right: 35px;
+        width: calc(100% - 75px);
+        column-gap: 30px;
+    }
+
+    .logo {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+/* Medium devices (landscape tablets, 992px and up) */
+@media only screen and (max-width: 992px) {
+    
+    .container {
+        margin-left: 70px; 
+        margin-right: 65px; 
+        width: calc(100% - 135px);
+        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
+        row-gap: 80px;
+        column-gap: 0;
+    }
+
+    .logo {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .main-section {
+        grid-column: 1;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .form-section {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        padding: 0px 16px;
+        margin: 0px;
+    }
+
+    .offices-section {
+        grid-column: 1;
+        margin-top: 80px;
+        grid-row: 4;
+        width: 100%;
+        padding: 0px 16px;
+        margin-top: 0px;
+    }
+
+    .quick-inquiries-section {
+        grid-column: 1;
+        grid-row: 5;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .subscrine-for-email-section {
+        grid-column: 1;
+        grid-row: 6;
+        width: 100%;
+        padding: 0px 16px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    
+    .container {
+        margin-left: 70px; 
+        margin-right: 65px; 
+        width: calc(100% - 135px);
+        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
+        row-gap: 80px;
+        column-gap: 0;
+    }
+
+    .logo {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    /* Nav bar elements */
+    nav {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .nav-bar nav ul {
+        width: 500px;
+    }
+
+    .form-section {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        padding: 0px 16px;
+        margin: 0px;
+    }
+
+    .offices-section {
+        grid-column: 1;
+        margin-top: 80px;
+        grid-row: 4;
+        width: 100%;
+        padding: 0px 16px;
+        margin-top: 0px;
+    }
+
+    .quick-inquiries-section {
+        grid-column: 1;
+        grid-row: 5;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .subscrine-for-email-section {
+        grid-column: 1;
+        grid-row: 6;
+        width: 100%;
+        padding: 0px 16px;
+    }
+}
+
+/* Extra small devices (phones, 430px and down) */
+@media screen and (max-width: 430px) {
+  .menu {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .container {
+        margin-left: 30px; 
+        margin-right: 15px; 
+        width: calc(100% - 35px);
+        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
+        row-gap: 50px;
+        column-gap: 0;
+    }
+
+    /* Main Section */
+    .main-section {
+        width: 560px;
+    }
+
+    .main-section h1 {
+        width: 530px;
+        font-size: 50px;
+    }
+
+    .main-section p {
+        width: 530px;
+        font-size: 22px;
+    }
+
+    /* Form Section */
+    .form-section {
+        width: 500px;
+        margin-left: 20px; 
+        margin-right: 15px;
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0px 16px;
+        margin: 0px;
+    }
+
+    /* First Section in The Form - Inputs Sections */
+    .form-section-inputs {
+        width: 500px;
+        height: 762px;
+        margin-bottom: 12px;
+    } 
+
+    .form-group {
+        width: 500px;
+        height: 100px;
+    }
+
+    .form-group .row {
+        width: 500px;
+        height: 162px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .form-group .address-div, .postcode-div {
+        width: 500px;
+        height: 81px;
+    }
+
+    .form-group input {
+        width: 500px;
+        height: 40px;
+    }
+
+    #address, #postcode {
+        width: 500px;
+        height: 40px;
+    }
+
+    #row-form-group {
+        height: 162px;
+    }
+
+    /* Second Section of The Form - Upload File Section */
+    .form-section-upload-files {
+        width: 500px;
+    }
+
+    .form-section-upload-files .upload {
+        width: 500px;
+    }
+
+    /* Third Section of The Form - Submit Sections */
+    .form-submit button {
+        width: 500px;
+    }
+
+    .offices-section {
+        grid-column: 1;
+        margin-top: 80px;
+        grid-row: 4;
+        width: 100%;
+        padding: 0px 16px;
+        margin-top: 0px;
+    }
+
+    .quick-inquiries-section {
+        grid-column: 1;
+        grid-row: 5;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .subscrine-for-email-section {
+        grid-column: 1;
+        grid-row: 6;
+        width: 100%;
+        padding: 0px 16px;
+    }
 }
