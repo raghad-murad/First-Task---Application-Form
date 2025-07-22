@@ -12,7 +12,6 @@
   - [**Technologies \& Techniques Used**](#technologies--techniques-used)
   - [**Project Highlights**](#project-highlights)
   - [**How to Run the Project**](#how-to-run-the-project)
-  - [**Responsive Design**](#responsive-design)
   - [**Project Structure**](#project-structure)
   - [**Responsive Breakpoints**](#responsive-breakpoints)
   - [**Completed Subtasks**](#completed-subtasks)
@@ -123,15 +122,6 @@ project/
 ├── styles.css             # Main CSS styles
 ├── image/                 # All used icons (e.g. menu, upload, flags)
 └── README.md              # This file
-```
-
-## **Responsive Breakpoints**
-
-```css
-@media (max-width: 1200px)  => laptops
-@media (max-width: 992px)   => tablets
-@media (max-width: 768px)   => small tablets
-@media (max-width: 430px)   => phones
 ```
 
 ## **Completed Subtasks**
