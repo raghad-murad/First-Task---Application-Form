@@ -14,11 +14,11 @@ body {
 .container {
     margin-left: 170px; 
     margin-right: 145px;
-    width: calc(calc(100% - 170px)-140px);
+    width: calc(calc(100% - 170px)-145px);
     display: grid;
     row-gap: 80px;
     column-gap: 230px;
-    grid-template-rows: 88px 146px 262px 134px 134px 134px;
+    grid-template-rows: 88px 146px 262px 134px 134px 134px 80px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -91,74 +91,79 @@ nav {
 /* Side Drawer */
 /* Show overlay when drawer is open */
 .drawer-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  z-index: 1040;
-  display: none;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1040;
+    display: none;
+    }
 
-.drawer-overlay.show {
-  display: block;
-}
+    .drawer-overlay.show {
+    display: block;
+    }
 
 .side-drawer {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-  z-index: 1050;
-  padding: 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: left 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    z-index: 1050;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: left 0.3s;
 }
 
 .side-drawer h1 {
-    margin: 60px 0px;
+    margin-bottom: 60px; 
     font-size: 32px;
     font-family: Verdana, sans-serif;
     color: rgb(149, 149, 149);
 }
 
 .side-drawer.open {
-  left: 0;
+    left: 0;
 }
 
 .drawer-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
 .close-btn {
-  font-size: 28px;
-  cursor: pointer;
-  color: #444;
+    font-size: 28px;
+    cursor: pointer;
+    color: #444;
 }
 
 /* Drawer links */
 .side-drawer ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .side-drawer ul li {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .side-drawer ul li a {
-  color: #333;
-  text-decoration: none;
-  font-size: 18px;
+    color: rgb(50, 60, 62);
+    font-family: Times, serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 10px, 0px;
 }
 
 /* Active link style */
@@ -168,16 +173,15 @@ nav {
 
 /* Menue Icon */
 .menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1100;
-  margin-left: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 1100;
+    margin-left: 20px;
 }
 
-.menu img,
-.menu svg {
-  width: 30px;
-  height: 30px;
+.menu img {
+    width: 30px;
+    height: 30px;
 }
 
 /* Main Section */
@@ -515,7 +519,7 @@ nav {
 }
 
 .quick-inquiries-card {
-    width: 150px;
+    width: 200px;
     height: 76px;
     display: flex;
     flex-direction: row;
@@ -563,7 +567,7 @@ nav {
     color: rgba(56, 60, 62, 1);
 }
 
-.quick-inquiries-card {
+.subscrine-for-email-card {
     width: 357px;
     height: 76px;
     display: flex;
@@ -596,7 +600,7 @@ nav {
     margin-top: 12px;
 }
 
-.quick-inquiries-card button {
+.subscrine-for-email-card button {
     width: 71px;
     height: 50px;
     border: none;
@@ -604,44 +608,61 @@ nav {
     vertical-align: center;
 }
 
-.quick-inquiries-card button:hover {
+.subscrine-for-email-card button img {
+    width: 25px;
+    height: 20px;
+    margin: 5px 0px;
+}
+
+.subscrine-for-email-card button:hover {
   background-color: rgba(255, 255, 255, 1);
   color: rgba(0, 143, 23, 1);
   border: 2px solid rgba(0, 143, 23, 1);
 }
 
-.quick-inquiries-card button:hover img{
+.subscrine-for-email-card button:hover img{
   content: url("image/check-mark-svgrepo-hover-com.svg");
 }
 
 /*  Responsive Page Section */
 
-/* Extra large devices (large laptops and desktops, 1200px and up) --> deafult */
-
-/* large devices (laptops, 1200px and down)*/
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1375px) {
 
     .container {
-        margin-left: 40px; 
-        margin-right: 35px;
-        width: calc(100% - 75px);
-        column-gap: 30px;
+        margin-left: 100px; 
+        margin-right: 95px;
+        width: calc(100% - 195px);
+        column-gap: 150px;
     }
 
     .logo {
-        margin-left: 30px;
-        margin-right: 30px;
+        margin-left: 90px;
+        margin-right: 90px;
     }
 }
 
-/* Medium devices (landscape tablets, 992px and up) */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1200px) {
+
+    .container {
+        margin-left: 70px; 
+        margin-right: 65px;
+        width: calc(100% - 75px);
+        column-gap: 140px;
+    }
+
+    .logo {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
     
     .container {
         margin-left: 70px; 
         margin-right: 65px; 
         width: calc(100% - 135px);
-        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
+        grid-template-rows: 88px 146px 1100px 290px 150px 150px 80px;
         row-gap: 80px;
         column-gap: 0;
     }
@@ -657,15 +678,135 @@ nav {
         padding: 0px 16px;
     }
 
+    .main-section h1 {
+        width: 700px;
+        font-size: 50px;
+    }
+
+    .main-section p {
+        width: 700px;
+        font-size: 20px;
+    }
+
+    /* Form Section */
     .form-section {
         grid-column: 1;
         grid-row: 3;
-        width: 100%;
+        width: 900px;
         padding: 0px 16px;
         margin: 0px;
     }
 
+    /* First Section in The Form - Inputs Sections */
+    .form-section-inputs {
+        width: 900px;
+        height: 762px;
+    } 
+
+    .form-group {
+        width: 900px;
+        height: 90px;
+    }
+
+    .form-group .row {
+        width: 900px;
+        height: 762px;
+    }
+
+    .form-group .address-div {
+        width: 557px;
+        height: 38px;
+    }
+
+    .form-group .postcode-div {
+        width: 290px;
+        height: 38px;
+    }
+
+    .form-group input {
+        width: 900px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .form-group .address-div input{
+        width: 557px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .form-group .postcode-div input{
+        width: 290px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .error-message {
+        width: 557px;
+        height: 16px;
+        font-size: 16px;
+    }
+
+    /* Second Section of The Form - Upload File Section */
+    .form-section-upload-files {
+        width: 900px;
+        height: 162px;
+    }
+
+    .form-section-upload-files .upload {
+        width: 900px;
+        height: 134px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-section-upload-files .upload-label {
+        width: 230px;
+        height: 30px;
+    }
+
+    .form-section-upload-files .upload-label img {
+        height: 28px;
+    }
+
+    .form-section-upload-files .upload-label p {
+        height: 28px;
+        font-size: 18px;
+    }
+
+    .form-section-upload-files p {
+        height: 28px;
+        font-size: 16px;
+    }
+
+    /* Third Section of The Form - Submit Sections */
+    .form-submit button {
+        width: 900px;
+        height: 54px;
+        font-size: 20px;
+    }
+
+    /* Fourth Section of The Form - Check Section */
+    .form-check {
+        width: 500px;
+        height: 54px;
+    }
+
+    .form-check label {
+        width: 413px;
+        height: 24px;
+        font-size: 18px;
+    }
+
+    .form-check input {
+        width: 50px;
+        transform: scale(1.7);
+    }
+
+    /* Offices Section */
     .offices-section {
+        width: 700px;
+        height: 290;
         grid-column: 1;
         margin-top: 80px;
         grid-row: 4;
@@ -674,40 +815,116 @@ nav {
         margin-top: 0px;
     }
 
+    .offices-section h2 {
+        width: 700px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .offices-info {
+        width: 700px;
+    }
+
+    .office-card {
+        width: 700px;
+    }
+
+    .office-card h3 {
+        width: 700px;
+        font-size: 23px;
+    }
+
+    .office-card p {
+        width: 700px;
+        font-size: 18px;
+    }
+
+    /* For Quick Inquiries Section */
     .quick-inquiries-section {
+        width: 700px;
+        height: 150px;
         grid-column: 1;
         grid-row: 5;
         width: 100%;
         padding: 0px 16px;
     }
 
+    .quick-inquiries-section h2 {
+        width: 700px;
+        height: 40;
+        font-size: 30px;
+    }
+
+    .quick-inquiries-info {
+        width: 300px;
+    }
+
+    .quick-inquiries-card {
+        width: 300px;
+        height: 50px;
+    }
+
+    .quick-inquiries-card img {
+        width: 30px;
+        height: 25px;
+    }
+
+    .quick-inquiries-card p {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    /* Subscrine for Email Section */
     .subscrine-for-email-section {
+        width: 700px;
+        height: 150px;
         grid-column: 1;
         grid-row: 6;
         width: 100%;
         padding: 0px 16px;
     }
+
+    .subscrine-for-email-section h2 {
+        width: 700px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .subscrine-for-email-card {
+        width: 700px;
+        height: 90px;
+    }
+
+    .email-group {
+        width: 560px;
+    }
+
+    .email-group input {
+        width: 560px;
+        height: 38px;
+        font-size: 20px;
+    }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
     
     .container {
-        margin-left: 70px; 
-        margin-right: 65px; 
-        width: calc(100% - 135px);
-        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
+        margin-left: 50px; 
+        margin-right: 45px; 
+        width: calc(100% - 95px);
+        grid-template-rows: 88px 180px 1100px 290px 150px 150px 80px;
         row-gap: 80px;
         column-gap: 0;
     }
 
     .logo {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 55px;
+        margin-right: 55px;
     }
 
     .logo h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     /* Nav bar elements */
@@ -720,138 +937,138 @@ nav {
         width: 500px;
     }
 
-    .form-section {
-        grid-column: 1;
-        grid-row: 3;
-        width: 100%;
-        padding: 0px 16px;
-        margin: 0px;
-    }
-
-    .offices-section {
-        grid-column: 1;
-        margin-top: 80px;
-        grid-row: 4;
-        width: 100%;
-        padding: 0px 16px;
-        margin-top: 0px;
-    }
-
-    .quick-inquiries-section {
-        grid-column: 1;
-        grid-row: 5;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .subscrine-for-email-section {
-        grid-column: 1;
-        grid-row: 6;
-        width: 100%;
-        padding: 0px 16px;
-    }
-}
-
-/* Extra small devices (phones, 430px and down) */
-@media screen and (max-width: 430px) {
-  .menu {
-    display: block;
-    margin-top: 30px;
-  }
-
-  .nav-bar {
-    display: none;
-  }
-
-  .container {
-        margin-left: 30px; 
-        margin-right: 15px; 
-        width: calc(100% - 35px);
-        grid-template-rows: 88px 146px 1080px 270px 134px 134px;
-        row-gap: 50px;
-        column-gap: 0;
-    }
-
-    /* Main Section */
     .main-section {
-        width: 560px;
+        grid-column: 1;
+        width: 700px;
+        padding: 0px 16px;
     }
 
     .main-section h1 {
-        width: 530px;
-        font-size: 50px;
+        width: 600px;
+        font-size: 40px;
     }
 
     .main-section p {
-        width: 530px;
-        font-size: 22px;
+        width: 600px;
+        font-size: 18px;
     }
 
     /* Form Section */
     .form-section {
-        width: 500px;
-        margin-left: 20px; 
-        margin-right: 15px;
         grid-column: 1;
         grid-row: 3;
+        width: 700px;
         padding: 0px 16px;
         margin: 0px;
     }
 
     /* First Section in The Form - Inputs Sections */
     .form-section-inputs {
-        width: 500px;
+        width: 700px;
         height: 762px;
-        margin-bottom: 12px;
     } 
 
     .form-group {
-        width: 500px;
-        height: 100px;
+        width: 700px;
+        height: 90px;
     }
 
     .form-group .row {
-        width: 500px;
-        height: 162px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        width: 700px;
+        height: 762px;
     }
 
-    .form-group .address-div, .postcode-div {
-        width: 500px;
-        height: 81px;
+    .form-group .address-div {
+        width: 357px;
+        height: 38px;
+    }
+
+    .form-group .postcode-div {
+        width: 190px;
+        height: 38px;
     }
 
     .form-group input {
-        width: 500px;
-        height: 40px;
+        width: 700px;
+        height: 38px;
+        font-size: 18px;
     }
 
-    #address, #postcode {
-        width: 500px;
-        height: 40px;
+    .form-group .address-div input{
+        width: 357px;
+        height: 38px;
+        font-size: 18px;
     }
 
-    #row-form-group {
-        height: 162px;
+    .form-group .postcode-div input{
+        width: 190px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .error-message {
+        width: 357px;
+        height: 16px;
+        font-size: 14px;
     }
 
     /* Second Section of The Form - Upload File Section */
     .form-section-upload-files {
-        width: 500px;
+        width: 700px;
+        height: 162px;
     }
 
     .form-section-upload-files .upload {
-        width: 500px;
+        width: 700px;
+        height: 134px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-section-upload-files .upload-label {
+        width: 230px;
+        height: 30px;
+    }
+
+    .form-section-upload-files .upload-label img {
+        height: 28px;
+    }
+
+    .form-section-upload-files .upload-label p {
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .form-section-upload-files p {
+        height: 28px;
+        font-size: 14px;
     }
 
     /* Third Section of The Form - Submit Sections */
     .form-submit button {
-        width: 500px;
+        width: 700px;
+        height: 54px;
+        font-size: 18px;
     }
 
+    /* Fourth Section of The Form - Check Section */
+    .form-check {
+        width: 400px;
+        height: 54px;
+    }
+
+    .form-check label {
+        width: 413px;
+        height: 24px;
+        font-size: 16px;
+    }
+
+    .form-check input {
+        width: 50px;
+        transform: scale(1.5);
+    }
+
+    /* Offices Section */
     .offices-section {
         grid-column: 1;
         margin-top: 80px;
@@ -859,19 +1076,398 @@ nav {
         width: 100%;
         padding: 0px 16px;
         margin-top: 0px;
+        width: 700px;
+        height: 290;
     }
 
+    .offices-section h2 {
+        width: 700px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .offices-info {
+        width: 700px;
+    }
+
+    .office-card {
+        width: 700px;
+    }
+
+    .office-card h3 {
+        width: 700px;
+        font-size: 20px;
+    }
+
+    .office-card p {
+        width: 700px;
+        font-size: 16px;
+    }
+
+    /* For Quick Inquiries Section */
     .quick-inquiries-section {
+        width: 700px;
+        height: 150px;
         grid-column: 1;
         grid-row: 5;
         width: 100%;
         padding: 0px 16px;
     }
 
+    .quick-inquiries-section h2 {
+        width: 700px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .quick-inquiries-info {
+        width: 300px;
+    }
+
+    .quick-inquiries-card {
+        width: 300px;
+        height: 30px;
+    }
+
+    .quick-inquiries-card img {
+        width: 25px;
+        height: 20px;
+    }
+
+    .quick-inquiries-card p {
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+        padding-top: 5px;
+    }
+
+    /* Subscrine for Email Section */
     .subscrine-for-email-section {
+        width: 700px;
+        height: 150px;
         grid-column: 1;
         grid-row: 6;
         width: 100%;
         padding: 0px 16px;
     }
+
+    .subscrine-for-email-section h2 {
+        width: 700px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .subscrine-for-email-card {
+        width: 700px;
+        height: 90px;
+    }
+
+    .email-group {
+        width: 560px;
+    }
+
+    .email-group input {
+        width: 560px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 790px) {
+    .menu {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .container {
+        margin-left: 30px; 
+        margin-right: 25px; 
+        width: calc(100% - 55px);
+        grid-template-rows: 0px 160px 1100px 290px 150px 150px 80px;
+        row-gap: 50px;
+        column-gap: 0;
+    }
+
+    /* Main Section */
+    .main-section {
+        width: 600px;
+    }
+
+    .main-section h1 {
+        width: 600px;
+        font-size: 40px;
+    }
+
+    .main-section p {
+        width: 600px;
+        font-size: 18px;
+    }
+
+    /* First Section in The Form - Inputs Sections */
+    .form-section {
+        width: 700px;
+    }
+
+    .form-section-inputs {
+        width: 680px;
+        height: 762px;
+    } 
+
+    .form-group {
+        width: 680px;
+        height: 90px;
+    }
+
+    .form-group .row {
+        width: 680px;
+        height: 762px;
+    }
+
+    .form-group .address-div {
+        width: 370px;
+        height: 38px;
+    }
+
+    .form-group .postcode-div {
+        width: 270px;
+        height: 38px;
+    }
+
+    .form-group input {
+        width: 680px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .form-group .address-div input{
+        width: 370px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .form-group .postcode-div input{
+        width: 270px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .error-message {
+        width: 357px;
+        height: 16px;
+        font-size: 12px;
+    }
+
+    /* Second Section of The Form - Upload File Section */
+    .form-section-upload-files {
+        width: 680px;
+        height: 162px;
+    }
+
+    .form-section-upload-files .upload {
+        width: 680px;
+        height: 134px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-section-upload-files .upload-label {
+        width: 230px;
+        height: 30px;
+    }
+
+    .form-section-upload-files .upload-label img {
+        height: 28px;
+    }
+
+    .form-section-upload-files .upload-label p {
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .form-section-upload-files p {
+        height: 28px;
+        font-size: 14px;
+    }
+
+    /* Third Section of The Form - Submit Sections */
+    .form-submit button {
+        width: 680px;
+        height: 54px;
+        font-size: 18px;
+    }
+
+    /* Fourth Section of The Form - Check Section */
+    .form-check {
+        width: 400px;
+        height: 54px;
+    }
+
+    .form-check label {
+        width: 413px;
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .form-check input {
+        width: 50px;
+        transform: scale(1.3);
+    }
+
+    /* Offices Section */
+    .offices-section {
+        grid-column: 1;
+        margin-top: 80px;
+        grid-row: 4;
+        width: 100%;
+        padding: 0px 16px;
+        margin-top: 0px;
+        width: 680px;
+        height: 290;
+    }
+
+    .offices-section h2 {
+        width: 680px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .offices-info {
+        width: 600px;
+    }
+
+    .office-card {
+        width: 680px;
+    }
+
+    .office-card h3 {
+        width: 680px;
+        font-size: 18px;
+    }
+
+    .office-card p {
+        width: 680px;
+        font-size: 16px;
+    }
+
+    /* For Quick Inquiries Section */
+    .quick-inquiries-section {
+        width: 680px;
+        height: 150px;
+        grid-column: 1;
+        grid-row: 5;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .quick-inquiries-section h2 {
+        width: 680px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .quick-inquiries-info {
+        width: 250px;
+    }
+
+    .quick-inquiries-card {
+        width: 250px;
+        height: 30px;
+    }
+
+    .quick-inquiries-card img {
+        width: 25px;
+        height: 20px;
+    }
+
+    .quick-inquiries-card p {
+        width: 200px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    /* Subscrine for Email Section */
+    .subscrine-for-email-section {
+        width: 700px;
+        height: 150px;
+        grid-column: 1;
+        grid-row: 6;
+        width: 100%;
+        padding: 0px 16px;
+    }
+
+    .subscrine-for-email-section h2 {
+        width: 680px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .subscrine-for-email-card {
+        width: 680px;
+        height: 90px;
+    }
+
+    .email-group {
+        width: 560px;
+    }
+
+    .email-group input {
+        width: 560px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .menu {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .container {
+        margin-left: 10px; 
+        margin-right: 10px; 
+        width: calc(100% - 20px);
+        grid-template-rows: 0px 160px 1100px 290px 150px 150px 80px;
+        row-gap: 50px;
+        column-gap: 0;
+    }
+
+    .form-group .row {
+        width: 680px;
+        height: 762px;
+        flex-direction: column;
+    }
+
+    .form-group .address-div {
+        width: 680px;
+        height: 90px;
+    }
+
+    .form-group .postcode-div {
+        width: 680px;
+        height: 90px;
+    }
+
+    .form-group .address-div input{
+        width: 680px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .form-group .postcode-div input{
+        width: 680px;
+        height: 38px;
+        font-size: 16px;
+    }
+
 }
