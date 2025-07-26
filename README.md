@@ -12,7 +12,6 @@
   - [**Technologies \& Techniques Used**](#technologies--techniques-used)
   - [**Project Highlights**](#project-highlights)
   - [**How to Run the Project**](#how-to-run-the-project)
-  - [**Responsive Design**](#responsive-design)
   - [**Project Structure**](#project-structure)
   - [**Responsive Breakpoints**](#responsive-breakpoints)
   - [**Completed Subtasks**](#completed-subtasks)
@@ -128,6 +127,7 @@ project/
 └── README.md              # This file - Project overview and instructions
 ```
 
+<<<<<<< HEAD
 ## **Responsive Breakpoints**
 
 ```css
@@ -138,6 +138,8 @@ project/
 @media (max-width: 430px)   => phones
 ```
 
+=======
+>>>>>>> 6c83ab04d23bff46a99b906a7570f5ec5b8d4145
 ## **Completed Subtasks**
 
 * [x] Setup GitHub repository
