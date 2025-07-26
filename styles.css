@@ -1,81 +1,87 @@
-/* Reset default margins and paddings */
+/* Reset default margins and paddings and set the outline none for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
-/* Body styling */
+/* Body general styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', serif;
     background-color: #ffffff;
 }
 
-.container {
-    margin-left: 170px; 
-    margin-right: 145px;
-    width: calc(calc(100% - 170px)-145px);
-    display: grid;
-    row-gap: 80px;
-    column-gap: 230px;
-    grid-template-rows: 88px 146px 262px 134px 134px 134px 80px;
-    grid-template-columns: 1fr 1fr;
+/* Style a class called padding-inline-val to controlt the inline padding */
+.padding-inline-val {
+    padding-inline: 160px;
 }
+
+/*
+    First Section, Navigation Bar Section:
+      - Navigation Bar for the larger sereens such as Laptops.
+      - Menu or Side Drawer for smaller screens such as phones.
+*/
+
+/* Case One -> Navigation Bar */
 
 /* Navigation bar container */
 .nav-bar {
-    grid-row: 1 / 2;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 1);
     width: 100%;
     height: 88px;
-    padding: 10px;
+    padding: 28px 160px;
     display: flex; 
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: flex-start;
     align-items:center;
     position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     z-index: 1000;
+    gap: 183.5px;
 }
 
 /* Logo section */
 .logo {
-    margin-left: 160px;
-    margin-right: 160px;
+    width: 70px;
+    height: 32px;
 }
 
 .logo h1 {
-    font-size: 32px;
-    font-family: Verdana, sans-serif;
-    color: rgb(149, 149, 149);
+    height: 32px;
+    width: 167px;
+    font-weight: 700px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: rgba(149, 149, 149, 1);
 }
 
 /* Nav bar elements */
-nav {
-    margin-left: 24px;
-    margin-right: 24px;
-}
-
 .nav-bar nav ul {
+    height: 18px;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 613px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    gap: 32px;
 }
 
 .nav-bar nav ul li a {
-    color: rgb(50, 60, 62);
-    font-family: Times, serif;
+    height: 18px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 18px;
+    display: inline-block;
+    overflow: hidden;
     letter-spacing: 0.5px;
     text-decoration: none;
-    padding: 10px, 0px;
+    color: rgba(56, 60, 62, 1);
 }
 
 /* Active link style */
@@ -88,7 +94,8 @@ nav {
     color: rgba(0, 143, 23, 1);
 }
 
-/* Side Drawer */
+/* Case Two -> Menu or Side Drawer */
+
 /* Show overlay when drawer is open */
 .drawer-overlay {
     position: fixed;
@@ -97,37 +104,34 @@ nav {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.4);
-    z-index: 1040;
+    z-index: 1050;
     display: none;
-    }
+}
 
-    .drawer-overlay.show {
+/* When the side drawer or the menue open, the overlay will display */
+.drawer-overlay.show {
     display: block;
-    }
+}
 
+/* Side Drawer or Menu style */
 .side-drawer {
     position: fixed;
     top: 0;
-    left: -50%;
+    left: -50%;             
     width: 50%;
     height: 100%;
     background-color: #f9f9f9;
     box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-    z-index: 1050;
-    padding: 20px 20px;
+    z-index: 1100;
+    padding: 30px 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 20px;
     transition: left 0.3s;
 }
 
-.side-drawer h1 {
-    margin-bottom: 60px; 
-    font-size: 32px;
-    font-family: Verdana, sans-serif;
-    color: rgb(149, 149, 149);
-}
-
+/*When the side drawer open, it will show by change the left value*/
 .side-drawer.open {
     left: 0;
 }
@@ -136,7 +140,6 @@ nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
 }
 
 .close-btn {
@@ -145,25 +148,40 @@ nav {
     color: #444;
 }
 
+/* Side Drawer Logo */
+.side-drawer h1 { 
+    width: 100%;
+    height: 80px;
+    padding: 10px 0px;
+    font-size: 40px;
+    font-family: Verdana, sans-serif;
+    color: rgb(149, 149, 149);
+}
+
 /* Drawer links */
 .side-drawer ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 10px;
 }
 
 .side-drawer ul li {
-    margin-bottom: 20px;
+    height: 40px;
+    padding: 10px;
 }
 
 .side-drawer ul li a {
     color: rgb(50, 60, 62);
-    font-family: Times, serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 18px;
     letter-spacing: 0.5px;
     text-decoration: none;
-    padding: 10px, 0px;
 }
 
 /* Active link style */
@@ -171,31 +189,60 @@ nav {
     border-bottom: 2px solid rgba(0, 143, 23, 1);
 }
 
+/* Hover link style */
+.side-drawer ul li a:hover {
+    color: rgba(0, 143, 23, 1);
+}
+
 /* Menue Icon */
 .menu {
     display: none;
     cursor: pointer;
-    z-index: 1100;
-    margin-left: 20px;
+    z-index: 1200;
+    padding-top: 16px;
+    padding-inline-start: 40px;
 }
 
 .menu img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2 ease;
+    cursor: pointer;
 }
 
-/* Main Section */
+.menu img:active {
+    transform: scale(1.1);
+}
+
+/* Container Section */
+.container {
+    /* To make the container section start after the nav bar section */
+    margin-top: 88px;
+    padding-block: 80px;
+    display: grid;
+    /* Declare two rows -> 150px, and 1140px */
+    grid-template-rows: 146px 1140px;
+    row-gap: 80px;
+    /* Declare two columns -> 4fr, and 3fr */
+    grid-template-columns: 4fr 3fr;
+    column-gap: 215px;
+    width: 100%;
+}
+
+/* First Section in the container -> Main Section*/
 .main-section {
-    grid-row: 2 / 3;
-    grid-column: 1;
+    grid-row: 1 / 2;
+    grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
+    padding-left: 1px;
+    gap: 24px;
 }
 
 .main-section h1 {
-    width: 547px;
+    height: 70px;
     font-size: 44px;
     font-weight: 700;
     line-height: 160%;
@@ -204,7 +251,7 @@ nav {
 }
 
 .main-section p {
-    width: 547px;
+    height: 52px;
     font-size: 16px;
     font-weight: 400;
     line-height: 160%;
@@ -212,39 +259,47 @@ nav {
     color: rgba(115, 123, 125, 1);
 }
 
-/* Form Section */
+/* Second section in the container -> Form Section */
 .form-section {
-    grid-row: 3 / 6;
-    grid-column: 1;
+    grid-row: 2;
+    grid-column: 1 / 2;
+    padding-block: 10px;
+}
+
+form {
+    width: 100%;
+    height: 1076px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 /* First Section in The Form - Inputs Sections */
 .form-section-inputs {
-    width: 548px;
+    width: 100%;
     height: 762px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 24px;
 } 
 
 .form-group {
-    width: 548px;
+    width: 100%;
     height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-block: 12px;
 }
 
 .form-group .row {
-    width: 548px;
-    height: 762px;
+    width: 100%;
+    height: 90px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -252,7 +307,7 @@ nav {
 }
 
 .form-group .address-div {
-    width: 357px;
+    width: 63%;
     height: 38px;
     display: flex;
     flex-direction: column;
@@ -261,7 +316,7 @@ nav {
 }
 
 .form-group .postcode-div {
-    width: 167px;
+    width: 33%;
     height: 38px;
     display: flex;
     flex-direction: column;
@@ -270,7 +325,7 @@ nav {
 }
 
 .form-group input {
-    width: 548px;
+    width: 100%;
     height: 38px;
     border: none;
     border-bottom: 2px solid rgba(115, 123, 125, 1);
@@ -279,12 +334,13 @@ nav {
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(142, 142, 142, 1);
     outline: none;
 }
 
 .form-group .address-div input{
-    width: 357px;
+    width: 100%;
     height: 38px;
     border: none;
     border-bottom: 2px solid rgba(115, 123, 125, 1);
@@ -293,12 +349,13 @@ nav {
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(142, 142, 142, 1);
     outline: none;
 }
 
 .form-group .postcode-div input{
-    width: 167px;
+    width: 100%;
     height: 38px;
     border: none;
     border-bottom: 2px solid rgba(115, 123, 125, 1);
@@ -312,33 +369,34 @@ nav {
 }
 
 .error-message {
-    width: 357px;
+    width: 100%;
     height: 16px;
     font-size: 10px;
     font-weight: 400;
     line-height: 160%;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     text-align: start;
+    vertical-align: middle;
     padding-top: 12px;
     color: rgba(212, 13, 13, 1);
 }
 
 /* Second Section of The Form - Upload File Section */
 .form-section-upload-files {
-    width: 548px;
+    width: 100%;
     height: 132px;
-    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
 .form-section-upload-files .upload {
-    width: 548px;
+    width: 100%;
     height: 104px;
     padding: 12px;
-    margin-bottom: 12px;
     border: 1px dashed rgba(142, 142, 142, 1);
     position: relative;
     display: flex;
@@ -348,18 +406,19 @@ nav {
 }
 
 .form-section-upload-files .upload-label {
-    width: 200px;
+    width: fit-content;
     height: 24px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
+    gap: 24px;
     z-index: 20;
 }
 
 .form-section-upload-files .upload-label img {
-    height: 22px;
+    height: 21px;
 }
 
 .form-section-upload-files .upload-label p {
@@ -368,30 +427,42 @@ nav {
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(142, 142, 142, 1);
 }
 
 .form-section-upload-files p {
-    height: 26px;
+    height: 16px;
     font-size: 10px;
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(142, 142, 142, 1);
 }
 
 /* Third Section of The Form - Submit Sections */
+.form-submit {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
 .form-submit button {
-    width: 548px;
+    width: 100%;
     height: 54px;
-    margin-top: 28px;
-    margin-bottom: 16px;
     border: none;
     background-color: rgba(0, 143, 23, 1);
     font-size: 14px;
     font-weight: 500;
     line-height: 160%;
     letter-spacing: 0.5px;
+    padding-inline: 1px;
+    vertical-align: middle;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -403,83 +474,98 @@ nav {
 
 /* Fourth Section of The Form - Check Section */
 .form-check {
-    width: 365px;
+    width: fit-content;
     height: 48px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 8px;
     padding: 12px 16px 12px 4px;
 }
 
 .form-check label {
-    width: 313px;
+    width: 95%;
     height: 22px;
-    text-align: center;
+    text-align: start;
     font-size: 14px;
     font-weight: 400;
     line-height: 160%;
+    vertical-align: middle;
     letter-spacing: 0.5px;
+    padding-top: 1px;
     color: rgba(56, 60, 62, 1);
+}
+
+.form-check input {
+    height: 20px;
+    width: 20px;
+}
+
+.form-check input:checked {
+    accent-color: green;
+}
+
+/* Third section in the container -> sider section */
+.side-section {
+    width: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 80px;
+    padding-block: 10px;
 }
 
 /* Offices Section */
 .offices-section {
-    grid-row: 3 / 4;
-    grid-column: 2;
-    width: 357px;
-    height: 262px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 32px;
 }
 
 .offices-section h2 {
-    width: 357px;
-    height: 26px;
+    width: 100%;
+    height: fit-content;
     text-align: start;
     font-size: 16px;
     font-weight: 700;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(56, 60, 62, 1);
 }
 
 .offices-info {
-    width: 357px;
-    height: 204px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 24px;
 }
 
 .office-card {
-    width: 357px;
-    height: 52px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.office-card h3 {
-    width: 357px;
-    height: 52px;
+.office-card p {
+    width: 100%;
+    height: fit-content;
     text-align: start;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: 0.5px;
-    color: rgba(56, 60, 62, 1);
-}
-
-.office-card p {
-    width: 357px;
-    height: 52px;
-    text-align: start;
-    font-size: 14px;
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
@@ -488,105 +574,103 @@ nav {
 
 /* For Quick Inquiries Section */
 .quick-inquiries-section {
-    grid-row: 4 / 5;
-    grid-column: 2;
-    width: 357px;
+    width: 100%;
     height: 134px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 32px;
 }
 
 .quick-inquiries-section h2 {
-    width: 230px;
+    width: 100%;
     height: 26px;
     text-align: start;
     font-size: 16px;
     font-weight: 700;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(56, 60, 62, 1);
 }
 
 .quick-inquiries-info {
-    width: 200px;
-    height: 76px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.quick-inquiries-card {
-    width: 200px;
-    height: 76px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.quick-inquiries-card img {
-    width: 25px;
-    height: 20px;
-    margin: 5px 0px;
-}
-
-.quick-inquiries-card p {
-    width: 150px;
-    height: 26px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: 0.5px;
-    color: rgba(56, 60, 62, 1);
-}
-
-/* Subscrine for Email Section */
-.subscrine-for-email-section {
-    grid-row: 5 / 6;
-    grid-column: 2;
-    width: 357px;
-    height: 134px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.subscrine-for-email-section h2 {
-    width: 357px;
-    height: 26px;
-    text-align: start;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 160%;
-    letter-spacing: 0.5px;
-    color: rgba(56, 60, 62, 1);
-}
-
-.subscrine-for-email-card {
-    width: 357px;
-    height: 76px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.email-group {
-    width: 262px;
+    width: 73.39%;
     height: 76px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    gap: 24px;
+}
+
+.quick-inquiries-card {
+    width: 100%;
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.quick-inquiries-card img {
+    width: 23px;
+    height: 26px;
+    padding-block: 5px;
+}
+
+.quick-inquiries-card p {
+    width: 100%;
+    height: 26px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    color: rgba(56, 60, 62, 1);
+}
+
+/* Subscrine for Email Section */
+.subscrine-for-email-section {
+    width: 100%;
+    height: 134px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+.subscrine-for-email-section h2 {
+    width: 100%;
+    height: 26px;
+    text-align: start;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    color: rgba(56, 60, 62, 1);
+}
+
+.subscrine-for-email-card {
+    width: 100%;
+}
+
+.subscrine-for-email-card  form {
+    width: 100%;
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
 }
 
 .email-group input {
-    width: 262px;
+    width: 73.39%;
     height: 38px;
     border: none;
     border-bottom: 2px solid rgba(115, 123, 125, 1);
@@ -595,6 +679,7 @@ nav {
     font-weight: 400;
     line-height: 160%;
     letter-spacing: 0.5px;
+    vertical-align: middle;
     color: rgba(142, 142, 142, 1);
     outline: none;
     margin-top: 12px;
@@ -609,9 +694,8 @@ nav {
 }
 
 .subscrine-for-email-card button img {
-    width: 25px;
-    height: 20px;
-    margin: 5px 0px;
+    width: 18px;
+    height: 18px;
 }
 
 .subscrine-for-email-card button:hover {
@@ -621,853 +705,225 @@ nav {
 }
 
 .subscrine-for-email-card button:hover img{
-  content: url("image/check-mark-svgrepo-hover-com.svg");
+  content: url("assets/check-mark-svgrepo-hover-com.svg");
 }
+
 
 /*  Responsive Page Section */
 
-@media only screen and (max-width: 1375px) {
+/* Extra large devices (large laptops and desktops, 1250px and up) -> by default*/
 
-    .container {
-        margin-left: 100px; 
-        margin-right: 95px;
-        width: calc(100% - 195px);
-        column-gap: 150px;
+/* Large devices (laptops/desktops, 1260px and up) */
+@media only screen and (max-width: 1260px) {
+    .padding-inline-val {
+        padding-inline: 50px;
     }
 
-    .logo {
-        margin-left: 90px;
-        margin-right: 90px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-
-    .container {
-        margin-left: 70px; 
-        margin-right: 65px;
-        width: calc(100% - 75px);
-        column-gap: 140px;
-    }
-
-    .logo {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-}
-
-@media only screen and (max-width: 1060px) {
-    
-    .container {
-        margin-left: 70px; 
-        margin-right: 65px; 
-        width: calc(100% - 135px);
-        grid-template-rows: 88px 146px 1100px 290px 150px 150px 80px;
-        row-gap: 80px;
-        column-gap: 0;
-    }
-
-    .logo {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-
-    .main-section {
-        grid-column: 1;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .main-section h1 {
-        width: 700px;
-        font-size: 50px;
-    }
-
-    .main-section p {
-        width: 700px;
-        font-size: 20px;
-    }
-
-    /* Form Section */
-    .form-section {
-        grid-column: 1;
-        grid-row: 3;
-        width: 900px;
-        padding: 0px 16px;
-        margin: 0px;
-    }
-
-    /* First Section in The Form - Inputs Sections */
-    .form-section-inputs {
-        width: 900px;
-        height: 762px;
-    } 
-
-    .form-group {
-        width: 900px;
-        height: 90px;
-    }
-
-    .form-group .row {
-        width: 900px;
-        height: 762px;
-    }
-
-    .form-group .address-div {
-        width: 557px;
-        height: 38px;
-    }
-
-    .form-group .postcode-div {
-        width: 290px;
-        height: 38px;
-    }
-
-    .form-group input {
-        width: 900px;
-        height: 38px;
-        font-size: 20px;
-    }
-
-    .form-group .address-div input{
-        width: 557px;
-        height: 38px;
-        font-size: 20px;
-    }
-
-    .form-group .postcode-div input{
-        width: 290px;
-        height: 38px;
-        font-size: 20px;
-    }
-
-    .error-message {
-        width: 557px;
-        height: 16px;
-        font-size: 16px;
-    }
-
-    /* Second Section of The Form - Upload File Section */
-    .form-section-upload-files {
-        width: 900px;
-        height: 162px;
-    }
-
-    .form-section-upload-files .upload {
-        width: 900px;
-        height: 134px;
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
-    .form-section-upload-files .upload-label {
-        width: 230px;
-        height: 30px;
-    }
-
-    .form-section-upload-files .upload-label img {
-        height: 28px;
-    }
-
-    .form-section-upload-files .upload-label p {
-        height: 28px;
-        font-size: 18px;
-    }
-
-    .form-section-upload-files p {
-        height: 28px;
-        font-size: 16px;
-    }
-
-    /* Third Section of The Form - Submit Sections */
-    .form-submit button {
-        width: 900px;
-        height: 54px;
-        font-size: 20px;
-    }
-
-    /* Fourth Section of The Form - Check Section */
-    .form-check {
-        width: 500px;
-        height: 54px;
-    }
-
-    .form-check label {
-        width: 413px;
-        height: 24px;
-        font-size: 18px;
-    }
-
-    .form-check input {
-        width: 50px;
-        transform: scale(1.7);
-    }
-
-    /* Offices Section */
-    .offices-section {
-        width: 700px;
-        height: 290;
-        grid-column: 1;
-        margin-top: 80px;
-        grid-row: 4;
-        width: 100%;
-        padding: 0px 16px;
-        margin-top: 0px;
-    }
-
-    .offices-section h2 {
-        width: 700px;
-        height: 50px;
-        font-size: 30px;
-    }
-
-    .offices-info {
-        width: 700px;
-    }
-
-    .office-card {
-        width: 700px;
-    }
-
-    .office-card h3 {
-        width: 700px;
-        font-size: 23px;
-    }
-
-    .office-card p {
-        width: 700px;
-        font-size: 18px;
-    }
-
-    /* For Quick Inquiries Section */
-    .quick-inquiries-section {
-        width: 700px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 5;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .quick-inquiries-section h2 {
-        width: 700px;
-        height: 40;
-        font-size: 30px;
-    }
-
-    .quick-inquiries-info {
-        width: 300px;
-    }
-
-    .quick-inquiries-card {
-        width: 300px;
-        height: 50px;
-    }
-
-    .quick-inquiries-card img {
-        width: 30px;
-        height: 25px;
-    }
-
-    .quick-inquiries-card p {
-        width: 200px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    /* Subscrine for Email Section */
-    .subscrine-for-email-section {
-        width: 700px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 6;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .subscrine-for-email-section h2 {
-        width: 700px;
-        height: 50px;
-        font-size: 30px;
-    }
-
-    .subscrine-for-email-card {
-        width: 700px;
-        height: 90px;
-    }
-
-    .email-group {
-        width: 560px;
-    }
-
-    .email-group input {
-        width: 560px;
-        height: 38px;
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    
-    .container {
-        margin-left: 50px; 
-        margin-right: 45px; 
-        width: calc(100% - 95px);
-        grid-template-rows: 88px 180px 1100px 290px 150px 150px 80px;
-        row-gap: 80px;
-        column-gap: 0;
-    }
-
-    .logo {
-        margin-left: 55px;
-        margin-right: 55px;
-    }
-
-    .logo h1 {
-        font-size: 30px;
-    }
-
-    /* Nav bar elements */
-    nav {
-        margin-left: 14px;
-        margin-right: 14px;
+    .nav-bar {
+        gap: 150px;
     }
 
     .nav-bar nav ul {
-        width: 500px;
+        gap: 28px;
     }
 
-    .main-section {
-        grid-column: 1;
-        width: 700px;
-        padding: 0px 16px;
+    .container {
+        column-gap: 90px;
+    }
+}
+
+/* Large devices (laptops/desktops, 900px and up) */
+@media only screen and (max-width: 900px) {
+    .padding-inline-val {
+        padding-inline: 30px;
     }
 
-    .main-section h1 {
-        width: 600px;
-        font-size: 40px;
+    .nav-bar {
+        gap: 40px;
     }
 
-    .main-section p {
-        width: 600px;
-        font-size: 18px;
+    .nav-bar nav ul {
+        gap: 15px;
     }
 
-    /* Form Section */
-    .form-section {
-        grid-column: 1;
+    .container {
+        column-gap: 50px;
+    }
+}
+
+/* Medium devices (landscape tablets, 770px and up) */
+@media only screen and (max-width: 770px) {
+    .padding-inline-val {
+        padding-inline: 60px;
+    }
+
+    .menu {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .container {
+        margin-top: 0px;
+        padding-block: 60px;
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+        grid-template-rows: 146px 1140px  690px;
+        row-gap: 60px;
+        width: 100%;
+    }
+
+    .side-section {
         grid-row: 3;
-        width: 700px;
-        padding: 0px 16px;
-        margin: 0px;
-    }
-
-    /* First Section in The Form - Inputs Sections */
-    .form-section-inputs {
-        width: 700px;
-        height: 762px;
-    } 
-
-    .form-group {
-        width: 700px;
-        height: 90px;
-    }
-
-    .form-group .row {
-        width: 700px;
-        height: 762px;
-    }
-
-    .form-group .address-div {
-        width: 357px;
-        height: 38px;
-    }
-
-    .form-group .postcode-div {
-        width: 190px;
-        height: 38px;
-    }
-
-    .form-group input {
-        width: 700px;
-        height: 38px;
-        font-size: 18px;
-    }
-
-    .form-group .address-div input{
-        width: 357px;
-        height: 38px;
-        font-size: 18px;
-    }
-
-    .form-group .postcode-div input{
-        width: 190px;
-        height: 38px;
-        font-size: 18px;
-    }
-
-    .error-message {
-        width: 357px;
-        height: 16px;
-        font-size: 14px;
-    }
-
-    /* Second Section of The Form - Upload File Section */
-    .form-section-upload-files {
-        width: 700px;
-        height: 162px;
-    }
-
-    .form-section-upload-files .upload {
-        width: 700px;
-        height: 134px;
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
-    .form-section-upload-files .upload-label {
-        width: 230px;
-        height: 30px;
-    }
-
-    .form-section-upload-files .upload-label img {
-        height: 28px;
-    }
-
-    .form-section-upload-files .upload-label p {
-        height: 28px;
-        font-size: 16px;
-    }
-
-    .form-section-upload-files p {
-        height: 28px;
-        font-size: 14px;
-    }
-
-    /* Third Section of The Form - Submit Sections */
-    .form-submit button {
-        width: 700px;
-        height: 54px;
-        font-size: 18px;
-    }
-
-    /* Fourth Section of The Form - Check Section */
-    .form-check {
-        width: 400px;
-        height: 54px;
-    }
-
-    .form-check label {
-        width: 413px;
-        height: 24px;
-        font-size: 16px;
-    }
-
-    .form-check input {
-        width: 50px;
-        transform: scale(1.5);
-    }
-
-    /* Offices Section */
-    .offices-section {
         grid-column: 1;
-        margin-top: 80px;
-        grid-row: 4;
-        width: 100%;
-        padding: 0px 16px;
-        margin-top: 0px;
-        width: 700px;
-        height: 290;
+        gap: 60px;
     }
-
-    .offices-section h2 {
-        width: 700px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .offices-info {
-        width: 700px;
-    }
-
-    .office-card {
-        width: 700px;
-    }
-
-    .office-card h3 {
-        width: 700px;
-        font-size: 20px;
-    }
-
-    .office-card p {
-        width: 700px;
-        font-size: 16px;
-    }
-
-    /* For Quick Inquiries Section */
-    .quick-inquiries-section {
-        width: 700px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 5;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .quick-inquiries-section h2 {
-        width: 700px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .quick-inquiries-info {
-        width: 300px;
-    }
-
-    .quick-inquiries-card {
-        width: 300px;
-        height: 30px;
-    }
-
-    .quick-inquiries-card img {
-        width: 25px;
-        height: 20px;
-    }
-
-    .quick-inquiries-card p {
-        width: 200px;
-        height: 30px;
-        font-size: 18px;
-        padding-top: 5px;
-    }
-
-    /* Subscrine for Email Section */
-    .subscrine-for-email-section {
-        width: 700px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 6;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .subscrine-for-email-section h2 {
-        width: 700px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .subscrine-for-email-card {
-        width: 700px;
-        height: 90px;
-    }
-
-    .email-group {
-        width: 560px;
-    }
-
-    .email-group input {
-        width: 560px;
-        height: 38px;
-        font-size: 18px;
-    }
-
 }
 
-@media screen and (max-width: 790px) {
-    .menu {
-        display: block;
-        margin-top: 30px;
+/* Small devices (portrait tablets and large phones, 660px and up) */
+@media only screen and (max-width: 660px) {
+
+    .padding-inline-val {
+        padding-inline: 30px;
     }
 
-    .nav-bar {
-        display: none;
+    .side-drawer {
+        padding-inline: 20px;
+    }
+
+    .side-drawer h1 { 
+        font-size: 30px;
+    }
+
+    .side-drawer ul {
+        padding-inline: 5px;
+    }
+
+    .side-drawer ul li a {
+        font-size: 16px;
+    }
+}
+
+/* Extra small devices (phones, 425px and down) */
+@media only screen and (max-width: 430px) {
+
+    .menu {
+        padding-top: 16px;
+        padding-inline-start: 16px;
+    }
+
+    .menu img {
+        width: 21px;
+        height: 18px;
     }
 
     .container {
-        margin-left: 30px; 
-        margin-right: 25px; 
-        width: calc(100% - 55px);
-        grid-template-rows: 0px 160px 1100px 290px 150px 150px 80px;
-        row-gap: 50px;
-        column-gap: 0;
+        margin-top: 0px;
+        padding-block: 32px;
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+        grid-template-rows: 146px 1100px 690px;
+        row-gap: 60px;
+        width: 100%;
     }
 
-    /* Main Section */
     .main-section {
-        width: 600px;
+        padding-left: 3px;
+        gap: 16px;
     }
 
     .main-section h1 {
-        width: 600px;
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .main-section p {
-        width: 600px;
-        font-size: 18px;
-    }
-
-    /* First Section in The Form - Inputs Sections */
-    .form-section {
-        width: 700px;
+        font-size: 14px;
     }
 
     .form-section-inputs {
-        width: 680px;
-        height: 762px;
-    } 
+        height: 848px;
+        gap: 4px;
+        margin-bottom: 32px;
+    }
 
     .form-group {
-        width: 680px;
-        height: 90px;
+        height: 82px;
     }
 
     .form-group .row {
-        width: 680px;
-        height: 762px;
-    }
-
-    .form-group .address-div {
-        width: 370px;
-        height: 38px;
-    }
-
-    .form-group .postcode-div {
-        width: 270px;
-        height: 38px;
-    }
-
-    .form-group input {
-        width: 680px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-    .form-group .address-div input{
-        width: 370px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-    .form-group .postcode-div input{
-        width: 270px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-    .error-message {
-        width: 357px;
-        height: 16px;
-        font-size: 12px;
-    }
-
-    /* Second Section of The Form - Upload File Section */
-    .form-section-upload-files {
-        width: 680px;
-        height: 162px;
-    }
-
-    .form-section-upload-files .upload {
-        width: 680px;
-        height: 134px;
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
-    .form-section-upload-files .upload-label {
-        width: 230px;
-        height: 30px;
-    }
-
-    .form-section-upload-files .upload-label img {
-        height: 28px;
-    }
-
-    .form-section-upload-files .upload-label p {
-        height: 28px;
-        font-size: 14px;
-    }
-
-    .form-section-upload-files p {
-        height: 28px;
-        font-size: 14px;
-    }
-
-    /* Third Section of The Form - Submit Sections */
-    .form-submit button {
-        width: 680px;
-        height: 54px;
-        font-size: 18px;
-    }
-
-    /* Fourth Section of The Form - Check Section */
-    .form-check {
-        width: 400px;
-        height: 54px;
-    }
-
-    .form-check label {
-        width: 413px;
-        height: 24px;
-        font-size: 14px;
-    }
-
-    .form-check input {
-        width: 50px;
-        transform: scale(1.3);
-    }
-
-    /* Offices Section */
-    .offices-section {
-        grid-column: 1;
-        margin-top: 80px;
-        grid-row: 4;
-        width: 100%;
-        padding: 0px 16px;
-        margin-top: 0px;
-        width: 680px;
-        height: 290;
-    }
-
-    .offices-section h2 {
-        width: 680px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .offices-info {
-        width: 600px;
-    }
-
-    .office-card {
-        width: 680px;
-    }
-
-    .office-card h3 {
-        width: 680px;
-        font-size: 18px;
-    }
-
-    .office-card p {
-        width: 680px;
-        font-size: 16px;
-    }
-
-    /* For Quick Inquiries Section */
-    .quick-inquiries-section {
-        width: 680px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 5;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .quick-inquiries-section h2 {
-        width: 680px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .quick-inquiries-info {
-        width: 250px;
-    }
-
-    .quick-inquiries-card {
-        width: 250px;
-        height: 30px;
-    }
-
-    .quick-inquiries-card img {
-        width: 25px;
-        height: 20px;
-    }
-
-    .quick-inquiries-card p {
-        width: 200px;
-        height: 30px;
-        font-size: 16px;
-    }
-
-    /* Subscrine for Email Section */
-    .subscrine-for-email-section {
-        width: 700px;
-        height: 150px;
-        grid-column: 1;
-        grid-row: 6;
-        width: 100%;
-        padding: 0px 16px;
-    }
-
-    .subscrine-for-email-section h2 {
-        width: 680px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .subscrine-for-email-card {
-        width: 680px;
-        height: 90px;
-    }
-
-    .email-group {
-        width: 560px;
-    }
-
-    .email-group input {
-        width: 560px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-}
-
-@media screen and (max-width: 450px) {
-    .menu {
-        display: block;
-        margin-top: 30px;
-    }
-
-    .nav-bar {
-        display: none;
-    }
-
-    .container {
-        margin-left: 10px; 
-        margin-right: 10px; 
-        width: calc(100% - 20px);
-        grid-template-rows: 0px 160px 1100px 290px 150px 150px 80px;
-        row-gap: 50px;
-        column-gap: 0;
-    }
-
-    .form-group .row {
-        width: 680px;
-        height: 762px;
+        height: 168px;
         flex-direction: column;
     }
 
     .form-group .address-div {
-        width: 680px;
-        height: 90px;
+        width: 100%;
+        height: 82px;
     }
 
     .form-group .postcode-div {
-        width: 680px;
-        height: 90px;
+        width: 100%;
+        height: 82px;
+    }
+
+    .form-group input {
+        height: 34px;
+        font-size: 14px;
     }
 
     .form-group .address-div input{
-        width: 680px;
-        height: 38px;
-        font-size: 16px;
+        height: 34px;
+        font-size: 14px;
     }
 
-    .form-group .postcode-div input{
-        width: 680px;
-        height: 38px;
-        font-size: 16px;
+    .form-check label {
+        font-size: 12px;
     }
 
+    .office-card p {
+        font-size: 14px;
+    }
+
+    .quick-inquiries-card p {
+        font-size: 14px;
+    }
+
+    .email-group input {
+        font-size: 14px;
+    }
+
+    .side-drawer {
+        padding-inline: 5px;
+        gap: 10px;
+    }
+
+    .side-drawer h1 { 
+        font-size: 25px;
+        height: 40px;
+    }
+
+    .side-drawer ul {
+        padding: 5px 2px;
+        gap: 8px;
+    }
+
+    .side-drawer ul li {
+        height: 30px;
+    }
+
+    .side-drawer ul li a {
+        font-size: 12px;
+    }
+
+    .form-check label {
+        font-size: 12px;
+        padding-top: 1px;
+    }
+
+    .form-check input {
+        height: 16px;
+        width: 16px;
+    }
 }

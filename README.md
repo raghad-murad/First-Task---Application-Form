@@ -110,27 +110,31 @@ This project demonstrates the following:
 
 The layout adjusts based on screen size:
 
-* **Large screens** (desktops): Horizontal navbar.
-* **Medium screens** (tablets): Collapsed spacing with same layout.
-* **Small screens** (mobiles ≤ 430px): Hidden navbar replaced by a hamburger icon to toggle the **side drawer**.
-
+* **Large Screens (≥ 1260px):** Two-column layout with large paddings and spacious navigation.
+* **Medium Screens (900px – 1259px):** Slightly reduced paddings and column spacing.
+* **Tablets (770px – 899px):** Navbar hidden, replaced with a hamburger menu. Single-column layout for content.
+* **Small Devices (660px – 769px):** Adjusted font sizes and padding in the side drawer and other elements.
+* **Extra Small Devices (≤ 430px):** Simplified layout with reduced paddings and font sizes for better readability.
+  
 ## **Project Structure**
 
 ```
 project/
 │
-├── index.html             # Main HTML structure
-├── styles.css             # Main CSS styles
-├── image/                 # All used icons (e.g. menu, upload, flags)
-└── README.md              # This file
+├── index.html             # Main HTML structure for the landing page
+├── styles.css             # All global and responsive CSS styles
+├── main.js                # JS logic for interactivity (e.g. toggling drawer)
+├── assets/                # Static assets: images, icons (menu, upload, flags, etc.)
+└── README.md              # This file - Project overview and instructions
 ```
 
 ## **Responsive Breakpoints**
 
 ```css
-@media (max-width: 1200px)  => laptops
-@media (max-width: 992px)   => tablets
-@media (max-width: 768px)   => small tablets
+@media (max-width: 1260px)  => laptops
+@media (max-width: 900px)   => small laptops / large tablets
+@media (max-width: 770px)   => tablets
+@media (max-width: 660px)   => small tablets / large phones
 @media (max-width: 430px)   => phones
 ```
 

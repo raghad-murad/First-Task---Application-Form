@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!--
+        Navigation Bar Section:
+          - Navigation Bar for the larger sereens such as Laptops.
+          - Menu or Side Drawer for smaller screens such as phones.
+    -->
+
     <!-- Horizontal Navigation Bar Container Section - For Navigation on Laptops and Tablet -->
-    <section class="nav-bar">
+    <section class="nav-bar padding-inline-val">
         <!-- Logo element -->
         <div class="logo">
             <h1>LOGO</h1>
@@ -28,9 +37,10 @@
     </section>
 
     <!-- Side Drawer for Section - For Navigation on Mobile -->
-    <!-- Hamburger Icon SVG -->
+
+    <!-- Menu Icon SVG image -->
     <div class="menu" onclick="toggleDrawer()" hidden>
-        <img src="image/menu-svgrepo-com.svg" alt="menu icon" />
+        <img src="assets/menu-svgrepo-com.svg" alt="menu icon" />
     </div>
 
     <!-- Overlay -->
@@ -52,7 +62,8 @@
         </ul>
     </div>
 
-    <div class="container">
+    <!-- Container for all the components -->
+    <div class="container padding-inline-val">
         
         <!-- Main Section -> simple intro or overview -->
         <section class="main-section">
@@ -119,7 +130,7 @@
                 <div class="form-section-upload-files">
                     <div class="upload">
                         <label for="file" class="upload-label">
-                            <img src="image/upload-svgrepo-com.svg" alt="upload icon">
+                            <img src="assets/upload-svgrepo-com.svg" alt="upload icon">
                             <p>Upload Additional File</p>
                             <input type="file" id="file" name="file" hidden>
                         </label>
@@ -130,81 +141,67 @@
                 <!-- Third Section of The Form - Submit Sections -->
                 <div class="form-submit">
                     <button type="submit" action="/submit" method="POST">SUBMIT</button>
+                    <!-- Fourth Section of The Form - Check Section -->
+                    <div class="form-check">
+                        <input type="checkbox" id="nda" name="nda">
+                        <label for="nda">I want to protect my data by signing an NDA</label>
+                    </div>
                 </div>
-
-                <!-- Fourth Section of The Form - Check Section -->
-                <div class="form-check">
-                    <input type="checkbox" id="nda" name="nda">
-                    <label for="nda">I want to protect my data by signing an NDA</label>
-                </div>
-
             </form>
 
         </section>
 
-        <!-- Offices Section -->
-        <section class="offices-section">
-            <h2>Offices</h2>
-            <div class="offices-info">
-                <div class="office-card">
-                    <h3>United States</h3>
-                    <p>United States 500 5th Avenue Suite 400, NY 10110</p>
-                </div>
-                <div class="office-card">
-                    <h3>United Kingdom</h3>
-                    <p>High St, Bromley BR1 1DN</p>
-                </div>
-                <div class="office-card">
-                    <h3>France</h3>
-                    <p>80 avenue des Terroirs de France, Paris</p>
-                </div>
-            </div>
-        </section>
+        <section class="side-section">
 
-        <!-- For Quick Inquiries Section -->
-        <section class="quick-inquiries-section">
-            <h2>For Quick Inquiries</h2>
-            <div class="quick-inquiries-info">
-                <div class="quick-inquiries-card">
-                    <img src="image/flag-for-flag-united-kingdom-svgrepo-com.svg" alt="United Kingdom Flag">
-                    <p>+44 7777777777</p>
+            <!-- Offices Section -->
+            <section class="offices-section">
+                <h2>Offices</h2>
+                <div class="offices-info">
+                    <div class="office-card">
+                        <p>United States<br>United States 500 5th Avenue Suite 400, NY 10110</p>
+                    </div>
+                    <div class="office-card">
+                        <p>United Kingdom<br>High St, Bromley BR1 1DN</p>
+                    </div>
+                    <div class="office-card">
+                        <p>France<br>80 avenue des Terroirs de France, Paris</p>
+                    </div>
                 </div>
-                <div class="quick-inquiries-card">
-                    <img src="image/flag-us-svgrepo-com.svg" alt="USA Flag">
-                    <p>+1 3333333330</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Subscrine for Email Section -->
-        <section class="subscrine-for-email-section">
-            <h2>Would you like to join our newsletter?</h2>
-            <div class="subscrine-for-email-card">
-                <div class="email-group">
-                    <input type="email" placeholder="Email" id="subscrine-email" name="subscrine-email" required>
-                    <span class="error-message" hidden>Please, enter valid email address</span>
+            <!-- For Quick Inquiries Section -->
+            <section class="quick-inquiries-section">
+                <h2>For Quick Inquiries</h2>
+                <div class="quick-inquiries-info">
+                    <div class="quick-inquiries-card">
+                        <img src="assets/flag-for-flag-united-kingdom-svgrepo-com.png" alt="United Kingdom Flag">
+                        <p>+44 7777777777</p>
+                    </div>
+                    <div class="quick-inquiries-card">
+                        <img src="assets/flag-us-svgrepo-com.png" alt="USA Flag">
+                        <p>+1 3333333330</p>
+                    </div>
                 </div>
-                <button><img src="image/check-mark-svgrepo-com.svg" alt="Check Mark"></button>
-            </div>
+            </section>
+
+            <!-- Subscrine for Email Section -->
+            <section class="subscrine-for-email-section">
+                <h2>Would you like to join our newsletter?</h2>
+                <div class="subscrine-for-email-card">
+                    <form class="email-group">
+                        <input type="email" placeholder="Email" id="subscrine-email" name="subscrine-email" required>
+                        <span class="error-message" hidden>Please, enter valid email address</span>
+                        <button type="submit" action="/submit" method="POST">
+                            <img src="assets/check-mark-svgrepo-com.svg" alt="Check Mark">
+                        </button>
+                    </form>
+                </div>
+            </section>
         </section>
 
     </div>
 
-    <script>
-        function toggleDrawer() {
-            const drawer = document.getElementById('sideDrawer');
-            const overlay = document.getElementById('drawerOverlay');
-            drawer.classList.toggle('open');
-            overlay.classList.toggle('show');
-        }
-
-        function closeDrawer() {
-            const drawer = document.getElementById('sideDrawer');
-            const overlay = document.getElementById('drawerOverlay');
-            drawer.classList.remove('open');
-            overlay.classList.remove('show');
-        }
-    </script>
+    <script src="main.js"></script>
 
 </body>
 </html>
