@@ -127,7 +127,6 @@ project/
 └── README.md              # This file - Project overview and instructions
 ```
 
-<<<<<<< HEAD
 ## **Responsive Breakpoints**
 
 ```css
@@ -138,8 +137,6 @@ project/
 @media (max-width: 430px)   => phones
 ```
 
-=======
->>>>>>> 6c83ab04d23bff46a99b906a7570f5ec5b8d4145
 ## **Completed Subtasks**
 
 * [x] Setup GitHub repository
