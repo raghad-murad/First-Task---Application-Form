@@ -12,20 +12,21 @@
   - [**Technologies \& Techniques Used**](#technologies--techniques-used)
   - [**Project Highlights**](#project-highlights)
   - [**How to Run the Project**](#how-to-run-the-project)
+  - [**Responsive Design**](#responsive-design)
   - [**Project Structure**](#project-structure)
   - [**Responsive Breakpoints**](#responsive-breakpoints)
   - [**Completed Subtasks**](#completed-subtasks)
   - [**Final Note**](#final-note)
 
-## </a>**Objective**
+## **Objective**
 The main objective of this task is to practice building a fully responsive and pixel-perfect "Contact Us" page based on a given Figma design. This includes setting up a project repository, structuring HTML/CSS code properly, implementing responsive design techniques, and handling basic interactivity.
 
-## </a>**Task Description**
+## **Task Description**
 We are required to implement a contact page layout using HTML, CSS, and optionally JavaScript (to handle the Side Drawer for mobile design), with a responsive design that adapts to both web and mobile views.
 
 <span><strong>For more information about the task:</strong><a href="FE Trainee First Task.pdf"> Task File</a></span>
 
-### </a>**The design includes**
+### **The design includes**
 <ul>
     <li>A top navigation header with links.</li>
     <li>A detailed contact form with fields for company details, contact information, and a file upload.</li>
@@ -34,14 +35,14 @@ We are required to implement a contact page layout using HTML, CSS, and optional
     <li>Pixel-perfect implementation matching the original Figma design.</li>
 </ul>
 
-### </a>**Design Source**
+### **Design Source**
 [Figma Design Link](https://www.figma.com/design/OM5tJ8OWH102HaB4qcm7JL/Application-Form--Community-?node-id=0-1&p=f&t=clWf3BCAkk81SWFd-0)
 
 ## **Technologies Used**
 <ul>
     <li>HTML5</li>
     <li>CSS3 (with Media Queries for responsiveness)</li>
-    <li>JavaScript (for side drawer interactivity)</li>
+    <li>JavaScript (only for side drawer toggle)</li>
     <li>Git for version control</li>
 </ul>
 
@@ -60,6 +61,7 @@ We are required to implement a contact page layout using HTML, CSS, and optional
     * Desktop
     * Tablet
     * Mobile
+  
   * **Custom Styling for Inputs**: Including focus states, validation messages, and hover effects.
   * **Custom Upload Area**: Styled with dashed borders and icons for file input.
 
@@ -82,7 +84,7 @@ This project demonstrates the following:
 
 * Pixel-perfect conversion from Figma to code.
 * Fully responsive layout using **CSS Grid** and **Media Queries**.
-* Functional **Side Drawer Navigation** for mobile screens using vanilla JavaScript.
+* Mobile **Side Drawer Navigation** implemented with minimal JavaScript for toggle behavior only.
 * Custom file upload UI with icons.
 * Accessible and validated input fields with error messages.
 * Visual consistency across devices.
@@ -103,17 +105,20 @@ This project demonstrates the following:
    python3 -m http.server
    ```
 
-3. Make sure the `images` folder is in the correct directory structure.
+3. Make sure the `assets` folder is in the correct directory structure.
 
 ## **Responsive Design**
 
-The layout adjusts based on screen size:
+The layout was made fully responsive based on actual screen sizes tested using browser developer tools. Each section adapts to the screen size using CSS Grid and Flexbox, and careful adjustments were made at multiple breakpoints to maintain visual structure and readability.
 
-* **Large Screens (≥ 1260px):** Two-column layout with large paddings and spacious navigation.
-* **Medium Screens (900px – 1259px):** Slightly reduced paddings and column spacing.
-* **Tablets (770px – 899px):** Navbar hidden, replaced with a hamburger menu. Single-column layout for content.
-* **Small Devices (660px – 769px):** Adjusted font sizes and padding in the side drawer and other elements.
-* **Extra Small Devices (≤ 430px):** Simplified layout with reduced paddings and font sizes for better readability.
+The key responsive behaviors include:
+
+* **Extra Large Screens (≥ 1440px):** The layout is centered with `max-width` to prevent content from stretching too wide.
+* **Large Screens (≤ 1025px):** Padding and gaps are reduced; form rows become stacked and easier to read.
+* **Tablets (≤ 769px):** The layout switches to a single column; the navigation bar is hidden and replaced with a hamburger menu (side drawer).
+* **Small Tablets & Large Phones (≤ 660px):** Font sizes and paddings inside the drawer menu are adjusted for usability.
+* **Phones (≤ 426px):** Layout simplified, font sizes and spacing reduced for clarity, and components like the contact form are vertically stacked with optimized height.
+
   
 ## **Project Structure**
 
@@ -127,19 +132,20 @@ project/
 └── README.md              # This file - Project overview and instructions
 ```
 
-<<<<<<< HEAD
 ## **Responsive Breakpoints**
 
+The following breakpoints were implemented based on real device widths from browser developer tools:
+
 ```css
-@media (max-width: 1260px)  => laptops
-@media (max-width: 900px)   => small laptops / large tablets
-@media (max-width: 770px)   => tablets
-@media (max-width: 660px)   => small tablets / large phones
-@media (max-width: 430px)   => phones
+@media (min-width: 1440px)  // Very large screens - centered layout
+@media (max-width: 1025px)  // Laptops and large tablets
+@media (max-width: 769px)   // Tablets
+@media (max-width: 660px)   // Small tablets and large phones
+@media (max-width: 426px)   // Phones
 ```
 
-=======
->>>>>>> 6c83ab04d23bff46a99b906a7570f5ec5b8d4145
+> Note: Breakpoints and layout adjustments were based on real device dimensions tested through Chrome DevTools to ensure practical responsiveness rather than relying solely on standard media query ranges.
+
 ## **Completed Subtasks**
 
 * [x] Setup GitHub repository

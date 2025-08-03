@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Form</title>
+    <meta name="description" content="Get a free consultation for custom IT projects. We provide expert tech solutions in FinTech, software development, and more.">
+    <title>Contact Us - IT Consultation</title>
+    <meta name="keywords" content="IT consultation, FinTech solutions, software development, contact us, tech experts">
+    <meta property="og:title" content="Contact Us - Free IT Consultation">
+    <meta property="og:description" content="Get expert IT solutions for your business. Book a free consultation today.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +68,7 @@
     </div>
 
     <!-- Container for all the components -->
-    <div class="container padding-inline-val">
+    <main class="container padding-inline-val">
         
         <!-- Main Section -> simple intro or overview -->
         <section class="main-section">
@@ -73,55 +78,55 @@
 
         <!-- Form Section -->
         <section class="form-section">
-            <form>
+            <form action="/submit" method="POST">
 
                 <!-- First Section of The Form - Inputs Section -->
                 <div class="form-section-inputs">
                 
                     <div class="form-group">
-                        <input type="text" placeholder="Your company name" id="company" name="company" required>
+                        <input class="input-style" type="text" placeholder="Your company name" id="company" name="company" required aria-label="Company name">
                         <span class="error-message" hidden>Please, enter valid company name</span>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" placeholder="Nature of Business" id="businessNature" name="businessNature" required>
+                        <input class="input-style" type="text" placeholder="Nature of Business" id="businessNature" name="businessNature" aria-label="Nature of business">
                     </div>
 
                     <div class="form-group" id="row-form-group">
                         <div class="row">
                             <div class="address-div">
-                                <input type="text" placeholder="Address" id="address" name="address" required>
+                                <input class="input-style" type="text" placeholder="Address" id="address" name="address" aria-label="Company address">
                                 <span class="error-message" hidden>Please, enter valid address</span>
                             </div>
                             <div class="postcode-div">
-                                <input type="text" placeholder="Postcode" id="postcode" name="postcode" required>
+                                <input class="input-style" type="text" placeholder="Postcode" id="postcode" name="postcode" aria-label="Postcode">
                                 <span class="error-message" hidden>Please, enter valid postcode</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" placeholder="Contact Name" id="contactName" name="contactName" required>
+                        <input class="input-style" type="text" placeholder="Contact Name" id="contactName" name="contactName" aria-label="Contact person's name">
                         <span class="error-message" hidden>Please, enter valid contact name</span>
                     </div>
 
                     <div class="form-group">
-                        <input type="tel" placeholder="Contact Phone" id="phone" name="phone" required>
+                        <input class="input-style" type="tel" placeholder="Contact Phone" id="phone" name="phone" aria-label="Phone number">
                         <span class="error-message" hidden>Please, enter valid phone number</span>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" placeholder="email@gmail" id="email" name="email" required>
+                        <input class="input-style" type="email" placeholder="email@gmail" id="email" name="email" aria-label="Email address">
                         <span class="error-message">Please, enter valid email address</span>
                     </div>
 
                     <div class="form-group">
-                        <input type="url" placeholder="LinkedIn" id="linkedin" name="linkedin" required>
+                        <input class="input-style" type="url" placeholder="LinkedIn" id="linkedin" name="linkedin" aria-label="LinkedIn profile URL">
                         <span class="error-message" hidden>Please, enter valid contact linkedIn url</span>
                     </div>
 
                     <div class="form-group">
-                        <input placeholder="Let’s talk about your idea" id="idea" name="idea" required></input>
+                        <input class="input-style" placeholder="Let’s talk about your idea" id="idea" name="idea" aria-label="Project idea or description"></input>
                     </div>
 
                 </div>
@@ -132,7 +137,7 @@
                         <label for="file" class="upload-label">
                             <img src="assets/upload-svgrepo-com.svg" alt="upload icon">
                             <p>Upload Additional File</p>
-                            <input type="file" id="file" name="file" hidden>
+                            <input class="input-style" type="file" id="file" name="file" hidden>
                         </label>
                     </div>
                     <p class="file-note">Attach file. File size of your documents should not exceed 10MB</p>
@@ -140,10 +145,10 @@
 
                 <!-- Third Section of The Form - Submit Sections -->
                 <div class="form-submit">
-                    <button type="submit" action="/submit" method="POST">SUBMIT</button>
+                    <button type="submit">SUBMIT</button>
                     <!-- Fourth Section of The Form - Check Section -->
                     <div class="form-check">
-                        <input type="checkbox" id="nda" name="nda">
+                        <input class="input-style" type="checkbox" id="nda" name="nda">
                         <label for="nda">I want to protect my data by signing an NDA</label>
                     </div>
                 </div>
@@ -174,11 +179,11 @@
                 <h2>For Quick Inquiries</h2>
                 <div class="quick-inquiries-info">
                     <div class="quick-inquiries-card">
-                        <img src="assets/flag-for-flag-united-kingdom-svgrepo-com.png" alt="United Kingdom Flag">
+                        <img src="assets/flag-for-flag-united-kingdom-svgrepo-com.png" alt="United Kingdom Flag" loading="lazy">
                         <p>+44 7777777777</p>
                     </div>
                     <div class="quick-inquiries-card">
-                        <img src="assets/flag-us-svgrepo-com.png" alt="USA Flag">
+                        <img src="assets/flag-us-svgrepo-com.png" alt="USA Flag" loading="lazy">
                         <p>+1 3333333330</p>
                     </div>
                 </div>
@@ -188,10 +193,10 @@
             <section class="subscrine-for-email-section">
                 <h2>Would you like to join our newsletter?</h2>
                 <div class="subscrine-for-email-card">
-                    <form class="email-group">
-                        <input type="email" placeholder="Email" id="subscrine-email" name="subscrine-email" required>
+                    <form class="email-group" action="/submit" method="POST">
+                        <input class="input-style" type="email" placeholder="Email" id="subscrine-email" name="subscrine-email" aria-label="Email address for subscrine">
                         <span class="error-message" hidden>Please, enter valid email address</span>
-                        <button type="submit" action="/submit" method="POST">
+                        <button type="submit">
                             <img src="assets/check-mark-svgrepo-com.svg" alt="Check Mark">
                         </button>
                     </form>
@@ -199,7 +204,7 @@
             </section>
         </section>
 
-    </div>
+    </main>
 
     <script src="main.js"></script>
 
